@@ -23,7 +23,7 @@ body.sb-open #main-area{margin-right:0}
 .nav-btn{background:rgba(17,17,28,.78);border:1px solid rgba(122,101,48,.35);color:var(--text-muted);font-family:inherit;padding:.48rem .85rem;cursor:pointer;letter-spacing:.08em;backdrop-filter:blur(8px);transition:.25s ease}
 .nav-btn:hover{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.08)}
 @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-#screen-landing{background:radial-gradient(ellipse at 30% 20%,rgba(201,168,76,.06) 0%,transparent 50%),radial-gradient(ellipse at 75% 80%,rgba(139,34,82,.05) 0%,transparent 50%),var(--bg);justify-content:flex-start;padding-top:1.6rem}
+#screen-landing{background:radial-gradient(ellipse at 30% 20%,rgba(201,168,76,.06) 0%,transparent 50%),radial-gradient(ellipse at 75% 80%,rgba(139,34,82,.05) 0%,transparent 50%),var(--bg);justify-content:flex-start;padding-top:2.25rem}
 .landing-content{text-align:center;position:relative;width:min(980px,100%);margin:0 auto}
 .landing-heading{margin-bottom:1rem}
 .bagua-orbit{position:relative;width:220px;height:220px;margin:0;display:grid;place-items:center;border:1px solid rgba(122,101,48,.16);border-radius:50%;box-shadow:inset 0 0 35px rgba(201,168,76,.025),0 0 40px rgba(201,168,76,.025);animation:baguaFloat 4s ease-in-out infinite;flex:0 0 auto}
@@ -45,20 +45,21 @@ h1{font-family:'Ma Shan Zheng',serif;font-size:clamp(2.35rem,6vw,4rem);color:var
 .huangli-title{display:flex;align-items:center;gap:.65rem;font-family:'Ma Shan Zheng',serif;color:var(--gold);font-size:1.2rem;letter-spacing:.22em;white-space:nowrap}
 .huangli-title::before{content:'历';display:grid;place-items:center;width:28px;height:28px;border:1px solid var(--crimson);color:#d06080;font-size:.9rem;letter-spacing:0;transform:rotate(-3deg)}
 .huangli-solar{font-size:.78rem;color:var(--text-muted);letter-spacing:.08em;text-align:right}
-.huangli-main{display:grid;grid-template-columns:88px minmax(0,1.25fr) minmax(180px,.8fr);gap:1rem;align-items:center;padding:.8rem .25rem .7rem}
+.huangli-main{position:relative;display:grid;grid-template-columns:82px minmax(0,1fr) 170px;gap:.7rem;align-items:center;padding:.8rem .25rem .7rem}
 .date-seal{width:78px;height:78px;border:1px solid rgba(201,168,76,.48);display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(201,168,76,.035);box-shadow:inset 0 0 18px rgba(201,168,76,.035)}
 .date-seal-day{font-family:'Ma Shan Zheng',serif;font-size:2.55rem;line-height:1;color:var(--gold-light)}
 .date-seal-month{font-size:.65rem;color:var(--gold-dark);letter-spacing:.2em;margin-top:.25rem}
 .huangli-lunar{font-family:'Ma Shan Zheng',serif;color:var(--gold);font-size:1.35rem;letter-spacing:.12em;line-height:1.4}
 .huangli-ganzhi{font-size:.76rem;color:var(--text);letter-spacing:.08em;margin-top:.25rem}
 .huangli-term{font-size:.69rem;color:var(--text-muted);letter-spacing:.05em;margin-top:.2rem}
-.huangli-status{display:grid;gap:.35rem;padding-left:.9rem;border-left:1px solid rgba(122,101,48,.18)}
+.huangli-main>.date-seal,.huangli-main>div:nth-child(2){position:relative;z-index:1}
+.huangli-status{grid-column:3;display:grid;gap:.35rem;padding-left:.9rem;border-left:1px solid rgba(122,101,48,.18);position:relative;z-index:1}
 .huangli-status-row{display:flex;justify-content:space-between;gap:.8rem;font-size:.72rem;line-height:1.55}
 .huangli-status-row span:first-child{color:var(--text-muted);white-space:nowrap}
 .huangli-status-row strong{color:var(--text);font-weight:400;text-align:right}
 .huangli-status-row .luck-good{color:var(--gold-light)}
 .huangli-status-row .luck-bad{color:#d07182}
-.huangli-actions{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;padding:.7rem .25rem .25rem;border-top:1px solid rgba(122,101,48,.18)}
+.huangli-actions{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:.65rem;padding:.7rem .25rem .25rem;border-top:1px solid rgba(122,101,48,.18)}
 .huangli-action{display:grid;grid-template-columns:32px 1fr;gap:.55rem;align-items:start;min-width:0}
 .huangli-action-label{width:30px;height:30px;display:grid;place-items:center;border:1px solid;font-family:'Ma Shan Zheng',serif;font-size:1rem}
 .huangli-action.yi .huangli-action-label{color:var(--gold);border-color:rgba(201,168,76,.55)}
@@ -66,13 +67,16 @@ h1{font-family:'Ma Shan Zheng',serif;font-size:clamp(2.35rem,6vw,4rem);color:var
 .huangli-tags{display:flex;gap:.3rem;flex-wrap:wrap;padding-top:.1rem}
 .huangli-tag{font-size:.66rem;color:var(--text);padding:.08rem .35rem;background:rgba(201,168,76,.04);border:1px solid rgba(122,101,48,.13);line-height:1.65}
 .huangli-action.ji .huangli-tag{background:rgba(155,42,64,.04);border-color:rgba(155,42,64,.15)}
-.huangli-foot{display:flex;justify-content:center;gap:.75rem 1.5rem;flex-wrap:wrap;padding:.55rem .25rem .05rem;color:var(--text-muted);font-size:.65rem;letter-spacing:.06em}
+.huangli-foot{position:relative;z-index:1;display:flex;justify-content:center;gap:.75rem 1.5rem;flex-wrap:wrap;padding:.55rem .25rem .05rem;color:var(--text-muted);font-size:.65rem;letter-spacing:.06em}
 .huangli-foot b{color:var(--gold-dark);font-weight:400}
-.huangli-note{text-align:center;color:#4f4a43;font-size:.58rem;letter-spacing:.05em;margin-top:.35rem}
-.landing-actions{display:flex;align-items:center;justify-content:center;gap:3rem}
-.landing-methods{min-width:390px}
-.landing-methods .deco-line{margin:.2rem 0 1rem}
-.landing-methods .method-grid{margin-bottom:0}
+.huangli-note{position:relative;z-index:1;text-align:center;color:#4f4a43;font-size:.58rem;letter-spacing:.05em;margin-top:.35rem}
+.huangli-orbit{position:relative;width:178px;height:178px;margin:.35rem auto 1.4rem;animation:none;border-color:rgba(122,101,48,.13);box-shadow:inset 0 0 28px rgba(201,168,76,.02),0 0 30px rgba(201,168,76,.02);z-index:1}
+.huangli-orbit::before{inset:20px}.huangli-orbit::after{inset:-4px}
+.huangli-orbit .bagua-symbol{font-size:4.45rem}
+.huangli-orbit .orbit-trigram{font-size:1.28rem;transform:translate(-50%,-50%) rotate(var(--angle)) translateY(-73px)}
+.home-deco{position:relative;margin:2.5rem auto 0}
+.method-grid.home-method-grid{position:relative;left:-28px;width:min(600px,100%);display:grid;grid-template-columns:245px 245px;justify-content:space-between;gap:1rem;margin:8.7rem auto 2.5rem}
+.home-method-grid .method-card{width:245px;min-height:132px;justify-content:center}
 .deco-line{display:flex;align-items:center;gap:1rem;margin:1.5rem 0;justify-content:center}
 .deco-line span{width:40px;height:1px;background:var(--gold-dark)}
 .deco-line em{font-style:normal;font-size:.7rem;color:var(--gold-dark);letter-spacing:.3em}
@@ -382,7 +386,7 @@ body.sb-open #kb-sidebar{flex:0 0 var(--sb-w)}
 .misc-rule{font-size:.75rem;line-height:1.85;color:var(--text);padding:.45rem .2rem;border-bottom:1px solid rgba(122,101,48,.1)}
 .misc-rule:last-child{border-bottom:0}
 @media(max-width:768px){:root{--sb-w:min(88vw,360px)}body.sb-open #main-area{margin-right:0}.kb-inner{width:var(--sb-w)}#kb-sidebar{position:fixed;right:0;top:0;transform:translateX(100%);width:var(--sb-w);flex-basis:auto!important;transition:transform .38s cubic-bezier(.2,.8,.3,1)}body.sb-open #kb-sidebar{transform:translateX(0)}body.sb-open .kb-scrim{opacity:1;pointer-events:auto}body.sb-open #kb-toggle{right:18px;opacity:0;pointer-events:none}.screen{padding:4.5rem 1rem 2rem}.screen-nav{top:14px;left:14px}.method-grid{gap:1rem;flex-direction:column;align-items:center}.method-card{min-width:200px;width:100%;max-width:280px;padding:1rem 1.5rem}.question-options{grid-template-columns:1fr 1fr}.coins-row{gap:1.2rem}.coin{width:58px;height:58px;font-size:1.2rem}.b-yang{width:70px}.b-yin span{width:30px}.r-yang{width:85px;flex-shrink:0}.r-yin{width:85px}.r-yin span{width:36px}.r-yin{gap:13px}.hex-names h2{font-size:2.5rem}.result-judgment{font-size:1.2rem}.btn,.btn-throw{font-size:1.15rem;padding:.7rem 2rem}.deck-card,.card,.reveal-card{width:76px;height:110px}.reveal-card{bottom:70px}.card-back .c-num{font-size:1.2rem}.card-back .c-bar.solid{width:38px}.card-back .c-bar.half{width:15px}.mini-card{width:30px;height:42px;font-size:.5rem}.hx-grid{grid-template-columns:repeat(3,1fr)}.paagua-diagram{width:190px;height:190px}.hxt-top{gap:.7rem}.hxt-yang{width:38px}.hxt-yin span{width:14px}.modern-grid,.result-reading .modern-grid{grid-template-columns:1fr}}
-@media(max-width:768px){#screen-landing{padding-top:1rem}.landing-heading{padding:0 3.4rem}.landing-heading h1{font-size:2.25rem;letter-spacing:.18em}.landing-heading .subtitle{font-size:.72rem;letter-spacing:.42em}.huangli-card{padding:.85rem .75rem}.huangli-head{align-items:flex-start}.huangli-solar{font-size:.68rem;max-width:55%}.huangli-main{grid-template-columns:68px 1fr;gap:.7rem;padding:.7rem .15rem}.date-seal{width:62px;height:68px}.date-seal-day{font-size:2rem}.huangli-lunar{font-size:1.15rem}.huangli-ganzhi{font-size:.68rem}.huangli-status{grid-column:1/-1;padding:.65rem 0 0;border-left:0;border-top:1px solid rgba(122,101,48,.14);grid-template-columns:repeat(3,1fr)}.huangli-status-row{display:block;text-align:center}.huangli-status-row strong{display:block;text-align:center;margin-top:.12rem}.huangli-actions{grid-template-columns:1fr}.huangli-foot{gap:.35rem .75rem}.landing-actions{flex-direction:column;gap:1.35rem}.landing-methods{min-width:0;width:100%}.landing-actions .bagua-orbit{order:1}.landing-methods{order:2}}
+@media(max-width:768px){#screen-landing{padding-top:1rem}.landing-heading{padding:0 3.4rem}.landing-heading h1{font-size:2.25rem;letter-spacing:.18em}.landing-heading .subtitle{font-size:.72rem;letter-spacing:.42em}.huangli-card{padding:.85rem .75rem}.huangli-head{align-items:flex-start}.huangli-solar{font-size:.68rem;max-width:55%}.huangli-main{grid-template-columns:68px 1fr;gap:.7rem;padding:.7rem .15rem}.date-seal{width:62px;height:68px}.date-seal-day{font-size:2rem}.huangli-lunar{font-size:1.15rem}.huangli-ganzhi{font-size:.68rem}.huangli-orbit{margin:.5rem auto 1.25rem;width:168px;height:168px}.huangli-orbit .orbit-trigram{transform:translate(-50%,-50%) rotate(var(--angle)) translateY(-69px)}.huangli-status{grid-column:1/-1;padding:.65rem 0 0;border-left:0;border-top:1px solid rgba(122,101,48,.14);grid-template-columns:repeat(3,1fr)}.huangli-status-row{display:block;text-align:center}.huangli-status-row strong{display:block;text-align:center;margin-top:.12rem}.huangli-actions{grid-template-columns:1fr}.huangli-foot{gap:.35rem .75rem}.home-deco{margin:2.8rem auto 0}.method-grid.home-method-grid{left:auto;width:100%;display:flex;grid-template-columns:1fr;gap:1rem;margin:2rem auto}.home-method-grid .method-card{width:100%;max-width:280px;margin:0 auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.bagua-symbol{transform:none!important}}
 </style>
 </head>
@@ -396,6 +400,17 @@ body.sb-open #kb-sidebar{flex:0 0 var(--sb-w)}
 <div class="landing-heading">
 <h1>易经占卜</h1>
 <p class="subtitle">心 诚 则 灵</p>
+</div>
+<div class="bagua-orbit huangli-orbit" aria-label="太极与先天八卦图">
+<span class="orbit-trigram" style="--angle:0deg" title="乾">☰</span>
+<span class="orbit-trigram" style="--angle:45deg" title="兑">☱</span>
+<span class="orbit-trigram" style="--angle:90deg" title="离">☲</span>
+<span class="orbit-trigram" style="--angle:135deg" title="震">☳</span>
+<span class="orbit-trigram" style="--angle:180deg" title="坤">☷</span>
+<span class="orbit-trigram" style="--angle:225deg" title="艮">☶</span>
+<span class="orbit-trigram" style="--angle:270deg" title="坎">☵</span>
+<span class="orbit-trigram" style="--angle:315deg" title="巽">☴</span>
+<div class="bagua-symbol" aria-hidden="true">☯</div>
 </div>
 <section class="huangli-card" id="huangli-card" aria-label="今日黄历" aria-live="polite">
 <div class="huangli-head"><div class="huangli-title">今日黄历</div><div class="huangli-solar" id="huangli-solar">正在推演今日历象…</div></div>
@@ -415,25 +430,10 @@ body.sb-open #kb-sidebar{flex:0 0 var(--sb-w)}
 <div class="huangli-foot"><span>财神 <b id="huangli-cai">—</b></span><span>喜神 <b id="huangli-xi">—</b></span><span>福神 <b id="huangli-fu">—</b></span><span id="huangli-pengzu">—</span></div>
 <div class="huangli-note">传统历法文化信息，仅供日常参考</div>
 </section>
-<div class="landing-actions">
-<div class="bagua-orbit" aria-label="太极与先天八卦图">
-<span class="orbit-trigram" style="--angle:0deg" title="乾">☰</span>
-<span class="orbit-trigram" style="--angle:45deg" title="兑">☱</span>
-<span class="orbit-trigram" style="--angle:90deg" title="离">☲</span>
-<span class="orbit-trigram" style="--angle:135deg" title="震">☳</span>
-<span class="orbit-trigram" style="--angle:180deg" title="坤">☷</span>
-<span class="orbit-trigram" style="--angle:225deg" title="艮">☶</span>
-<span class="orbit-trigram" style="--angle:270deg" title="坎">☵</span>
-<span class="orbit-trigram" style="--angle:315deg" title="巽">☴</span>
-<div class="bagua-symbol" aria-hidden="true">☯</div>
-</div>
-<div class="landing-methods">
-<div class="deco-line" style="margin-bottom:2rem"><span></span><em>天 行 健</em><span></span></div>
-<div class="method-grid">
+<div class="deco-line home-deco"><span></span><em>天 行 健</em><span></span></div>
+<div class="method-grid home-method-grid">
 <button class="method-card" id="btn-coins"><span class="m-icon">☰</span><span class="m-title">掷 铜 钱</span><span class="m-sub">三币六爻 · 传统起卦</span></button>
 <button class="method-card" id="btn-cards"><span class="m-icon">☷</span><span class="m-title">抽    牌</span><span class="m-sub">四象取一 · 直觉起卦</span></button>
-</div>
-</div>
 </div>
 </div>
 </section>
